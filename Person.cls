@@ -5,6 +5,8 @@ Property Name As %String [ Required ];
 
 Property PhoneNumber As %String;
 
+Property Address As %String;
+
 Index NameIndex On Name [ Unique ];
 
 // This Method, AddFriend adds a friend 
