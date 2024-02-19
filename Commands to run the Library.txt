@@ -1,0 +1,62 @@
+// Create five books
+
+write !,"Creating five books..."
+do ##class(Library.LibraryUtils).AddBook()
+do ##class(Library.LibraryUtils).AddBook()
+do ##class(Library.LibraryUtils).AddBook()
+do ##class(Library.LibraryUtils).AddBook()
+do ##class(Library.LibraryUtils).AddBook()
+
+// Add three friends to your database
+
+write !,"Adding three friends..."
+do ##class(Library.LibraryUtils).AddFriend()
+do ##class(Library.LibraryUtils).AddFriend()
+do ##class(Library.LibraryUtils).AddFriend()
+
+// Print out all of the books in your database
+
+write !,"Printing all books..."
+do ##class(Library.LibraryUtils).PrintAll()
+
+// Loan one book to one friend and two to another
+
+write !,"Loan books to friends..."
+do ##class(Library.LibraryUtils).LoanBook(1, "Friend1")
+do ##class(Library.LibraryUtils).LoanBook(2, "Friend2")
+do ##class(Library.LibraryUtils).LoanBook(3, "Friend2")
+
+// Look at how many books are still in your library and how many are on loan
+
+do ##class(Library.LibraryUtils).GetShelfBooks()
+do ##class(Library.LibraryUtils).GetLoanedBooks()
+
+// Look at how many books each friend has
+
+do ##class(Library.LibraryUtils).FriendOwe("Friend1")
+do ##class(Library.LibraryUtils).FriendOwe("Friend2")
+
+// Return one book
+
+write !,"Returning one book..."
+do ##class(Library.LibraryUtils).ReturnBook(1)
+
+// Try to return a book that is not on loan
+
+write !,"Trying to return a book that is not on loan..."
+do ##class(Library.LibraryUtils).ReturnBook(4)
+
+// Print out a list of all books again
+
+write !,"Printing all books after changes..."
+do ##class(Library.LibraryUtils).PrintAll()
+
+// Check how many books a friend owes
+
+write !,"Checking how many books a friend owes..."
+do ##class(Library.LibraryUtils).FriendOwe("Friend1")
+
+// Check which friend has a particular book
+
+write !,"Checking which friend has a particular book..."
+do ##class(Library.LibraryUtils).GetFriend(2)
